@@ -2,7 +2,7 @@ const express = require('express')
 require('dotenv').config()
 const cors = require('cors')
 const db = require('./database/mongooseConnect')
-const musicRoutes = require('./routes/musicRoutes')
+const artistRoutes = require('./routes/artistRoutes')
 
 const app = express()
 
@@ -10,10 +10,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-// banco de dados
+//banco de dados
 db.connect()
 
 //rotas
-app.use(musicRoutes)
+app.use(artistRoutes)
 
 module.exports = app
